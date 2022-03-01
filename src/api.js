@@ -6,7 +6,7 @@ const http = require("http").createServer(app);
 
 const PORT = -process.env.PORT || 3000;
 
-const indexPath = path.join(__dirname, "../index.html");
+const indexPath = path.join(__dirname, "../public/index.html");
 const staticPath = path.join(__dirname, "../public");
 
 http.listen(PORT, () => {
