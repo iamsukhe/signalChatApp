@@ -1,19 +1,22 @@
 const express = require("express");
-const { listenerCount } = require("process");
 const app = express();
+const path = require("path");
 
 const http = require("http").createServer(app);
 
 const PORT = -process.env.PORT || 3000;
 
+const indexPath = path.join(__dirname, "../index.html");
+const staticPath = path.join(__dirname, "../public");
+
 http.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(staticPath));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(indexPath);
 });
 
 // socket
