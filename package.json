@@ -4,8 +4,8 @@
   "description": "Real Time Chat App - Socket.io",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/api.js",
-    "start": "node sec/api.js"
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
   },
   "author": "Sukhvinder Singh",
   "license": "ISC",
