@@ -4,7 +4,7 @@ const path = require("path");
 
 const http = require("http").createServer(app);
 
-const PORT = -process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const indexPath = path.join(__dirname, "../public/index.html");
 const staticPath = path.join(__dirname, "../public");
@@ -18,6 +18,10 @@ app.use(express.static(staticPath));
 app.get("/", (req, res) => {
   res.sendFile(indexPath);
 });
+
+// app.listen(PORT, () => {
+//   console.log(`Listening on port ${PORT}`);
+// });
 
 // socket
 
